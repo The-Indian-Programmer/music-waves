@@ -1,12 +1,3 @@
-/**
- * Zaroorat — Terminal Karaoke  (smooth equalizer edition)
- * ──────────────────────────────────────────────────────
- *  node player.js
- *  Same folder:  song.mp3   lyrics.json
- *  Requires:     ffmpeg  (+ ffplay / mpg123 / afplay for audio)
- */
-
-'use strict';
 
 const { spawn, execSync } = require('child_process');
 const path = require('path');
@@ -15,9 +6,7 @@ const fs   = require('fs');
 const AUDIO_FILE = path.join(__dirname, 'song.mp3');
 const LYRICS     = JSON.parse(fs.readFileSync(path.join(__dirname, 'lyrics.json')));
 
-// ─────────────────────────────────────────────────────────────────────────────
-//  ANSI
-// ─────────────────────────────────────────────────────────────────────────────
+
 const mv = (r, c) => `\x1b[${r};${c}H`;
 const cl = '\x1b[2K';
 const A = {
@@ -27,14 +16,12 @@ const A = {
   hide   : '\x1b[?25l',
   show   : '\x1b[?25h',
   cls    : '\x1b[2J\x1b[3J\x1b[H',
-  // ── cyan glow palette (top → bottom of each bar) ──
-  c0     : '\x1b[90m',           // silent floor dot
-  c1     : '\x1b[2m\x1b[36m',   // dim teal   — base
-  c2     : '\x1b[36m',           // teal        — lower-mid
-  c3     : '\x1b[96m',           // bright cyan — upper-mid
-  c4     : '\x1b[1m\x1b[96m',   // bold cyan   — top glow
-  peak   : '\x1b[1m\x1b[97m',   // bold white  — peak dot
-  // ── lyric colours ──
+  c0     : '\x1b[90m',   
+  c1     : '\x1b[2m\x1b[36m', 
+  c2     : '\x1b[36m',      
+  c3     : '\x1b[96m',        
+  c4     : '\x1b[1m\x1b[96m', 
+  peak   : '\x1b[1m\x1b[97m',  
   yellow : '\x1b[93m',
   cyan   : '\x1b[96m',
   magenta: '\x1b[95m',
@@ -59,19 +46,19 @@ const R = {
 
 
 const SONG_DUR    = 44.6;
-const SR          = 8000;    // PCM sample rate Hz
-const FFT_SIZE    = 1024;    // larger frame = more averaging = smoother
-const N_BARS      = 34;      // frequency bars  (BAR_W + GAP) × 34 = 68 cols
+const SR          = 8000; 
+const FFT_SIZE    = 1024; 
+const N_BARS      = 34;      
 const BAR_W       = 1;
 const GAP         = 1.5;
 
-const WAVE_FPS    = 15;      // ↓ fewer redraws = less flicker, feels slower
-const ATTACK      = 0.45;    // how fast bars RISE  (lower = slower rise)
-const DECAY       = 0.85;    // how fast bars FALL  (higher = slower fall)
-const SPATIAL_SM  = 0.25;    // blend with neighbour bars (0=off, 0.3=smooth curves)
-const AMP         = 1.8;     // amplitude scale (lower = bars don't max out)
-const PEAK_HOLD   = 45;      // frames peak dot stays at peak before falling
-const PEAK_FALL   = 3;       // frames between each 1-row peak drop
+const WAVE_FPS    = 15;  
+const ATTACK      = 0.45;   
+const DECAY       = 0.85;   
+const SPATIAL_SM  = 0.25;   
+const AMP         = 1.8;    
+const PEAK_HOLD   = 45;   
+const PEAK_FALL   = 3;    
 
 const CHAR_DELAY  = 90;
 
