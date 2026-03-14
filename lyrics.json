@@ -1,0 +1,55 @@
+{
+  "words": [
+    {"time":0.83,"word":"Ye","line":1},
+    {"time":0.75,"word":"dil","line":1},
+    {"time":1.82,"word":"tanhaa","line":1},
+    {"time":2.59,"word":"kyun","line":1},
+    {"time":2.93,"word":"rahe","line":1},
+
+    {"time":5.70,"word":"kyun","line":2},
+    {"time":5.93,"word":"hum","line":2},
+    {"time":6.80,"word":"tukadon","line":2},
+    {"time":7.70,"word":"mein","line":2},
+    {"time":8.43,"word":"jiyein","line":2},
+
+    {"time":10.43,"word":"Ye","line":3},
+    {"time":10.93,"word":"dil","line":3},
+    {"time":11.80,"word":"tanhaa","line":3},
+    {"time":12.80,"word":"kyun","line":3},
+    {"time":12.93,"word":"rahe","line":3},
+
+    {"time":15.43,"word":"kyun","line":4},
+    {"time":15.93,"word":"hum","line":4},
+    {"time":16.50,"word":"tukadon","line":4},
+    {"time":17.70,"word":"mein","line":4},
+    {"time":18.43,"word":"jiyein","line":4},
+
+    {"time":20.43,"word":"kyun","line":5},
+    {"time":20.86,"word":"rooh","line":5},
+    {"time":21.32,"word":"meri","line":5},
+    {"time":22.30,"word":"yeh","line":5},
+    {"time":23.93,"word":"sahe","line":5},
+
+    {"time":25.13,"word":"main","line":6},
+    {"time":25.93,"word":"adhoora","line":6},
+    {"time":28.37,"word":"jee","line":6},
+    {"time":27.37,"word":"raha","line":6},
+    {"time":28.04,"word":"hoon","line":6},
+
+    {"time":30.11,"word":"hardum","line":7},
+    {"time":31.63,"word":"yeh","line":7},
+    {"time":33.36,"word":"kah","line":7},
+    {"time":33.30,"word":"raha","line":7},
+    {"time":34.95,"word":"hoon","line":7},
+
+    {"time":35.43,"word":"mujhe","line":8},
+    {"time":36.14,"word":"teri","line":8},
+    {"time":37.87,"word":"zaroorat","line":8},
+    {"time":38.25,"word":"hai","line":8},
+
+    {"time":40.50,"word":"mujhe","line":9},
+    {"time":40.93,"word":"teri","line":9},
+    {"time":42.39,"word":"zaroorat","line":9},
+    {"time":44.06,"word":"hai","line":9}
+  ]
+}
